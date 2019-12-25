@@ -20,8 +20,6 @@
 <meta name="twitter:card" content="summary">
 
     
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
-    
     
     <link rel="icon" href="/img/favicon.ico">
     
@@ -77,70 +75,23 @@
     <div id="container">
       <div id="main">
 
-   
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2019/12/24/Spring-学习/" title="Spring 学习" itemprop="url">
+  
+    <h1 itemprop="name">Spring 学习</h1>
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+     
+           <p itemprop="description" >第一章：初识Spring第二章：JDBC必知必会第三章：O/R Mapping实践线上咖啡馆实战项目SpringBucksQ&amp;amp;A
+
+lombok 子类继承基类后，使用＠Data注解会有编辑器底色警告，告知你在生成hashcode等过程中，基类的内容不会被生成。 解决方法
+</p>
+        
     
-      <a href="/2019/12/24/Spring-学习/" title="Spring 学习" itemprop="url">Spring 学习</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-24T10:13:48.000Z" itemprop="datePublished"> Published 2019-12-24</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>[toc]</p>
-<h1 id="第一章：初识Spring"><a href="#第一章：初识Spring" class="headerlink" title="第一章：初识Spring"></a>第一章：初识Spring</h1><h1 id="第二章：JDBC必知必会"><a href="#第二章：JDBC必知必会" class="headerlink" title="第二章：JDBC必知必会"></a>第二章：JDBC必知必会</h1><h1 id="第三章：O-R-Mapping实践"><a href="#第三章：O-R-Mapping实践" class="headerlink" title="第三章：O/R Mapping实践"></a>第三章：O/R Mapping实践</h1><h2 id="线上咖啡馆实战项目SpringBucks"><a href="#线上咖啡馆实战项目SpringBucks" class="headerlink" title="线上咖啡馆实战项目SpringBucks"></a>线上咖啡馆实战项目SpringBucks</h2><p>Q&amp;A</p>
-<ol>
-<li><p>lombok 子类继承基类后，使用＠Data注解会有编辑器底色警告，告知你在生成hashcode等过程中，基类的内容不会被生成。<br> 解决方法</p>
-<ul>
-<li><p>添加<code>@EqualsAndHashCode(callSuper=true)</code>即可手动标记子类hash时要调用父类的hash方法对属于父类的部分内容生成哈希值。此时就不会报警告了。<br>(包括下面那句<code>@ToString(callSuper = true)</code>也是一样）</p>
-</li>
-<li><p>如果觉得此方式比较麻烦的话（每个类都要），可设置lombok的配置文件<code>lombok.config</code>来解决：</p>
-<ol>
-<li><p><code>lombok.config</code>文件需要放在<code>src/main/java</code>文件夹下的目录中（<u>也可以放在实体同级目录下</u>），其它位置无效。内容如下： </p>
- <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">config.stopBubbling</span> = <span class="string">true</span></span><br><span class="line"><span class="meta">lombok.equalsAndHashCode.callSuper</span> = <span class="string">call</span></span><br></pre></td></tr></table></figure></li>
-<li><p>在pom加入插件</p>
- <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>此时，可见<code>@Data</code>编辑器警告底色消失。</p>
-</li>
-</ol>
-</li>
-</ul>
-<p>2.</p>
-</li>
-</ol>
-<h1 id="第四章：NoSQL实践"><a href="#第四章：NoSQL实践" class="headerlink" title="第四章：NoSQL实践"></a>第四章：NoSQL实践</h1><h1 id="第五章：数据访问进阶"><a href="#第五章：数据访问进阶" class="headerlink" title="第五章：数据访问进阶"></a>第五章：数据访问进阶</h1><h1 id="第六章：SpringMVC实践"><a href="#第六章：SpringMVC实践" class="headerlink" title="第六章：SpringMVC实践"></a>第六章：SpringMVC实践</h1><h1 id="第七章：访问Web资源"><a href="#第七章：访问Web资源" class="headerlink" title="第七章：访问Web资源"></a>第七章：访问Web资源</h1><h1 id="第八章：Web开发进阶"><a href="#第八章：Web开发进阶" class="headerlink" title="第八章：Web开发进阶"></a>第八章：Web开发进阶</h1><h1 id="第九章：重新认识Spring-Boot"><a href="#第九章：重新认识Spring-Boot" class="headerlink" title="第九章：重新认识Spring Boot"></a>第九章：重新认识Spring Boot</h1><h1 id="第十章：运行中的Spring-Boot"><a href="#第十章：运行中的Spring-Boot" class="headerlink" title="第十章：运行中的Spring Boot"></a>第十章：运行中的Spring Boot</h1><h1 id="第十一章：Spring-Cloud及Cloud-Native概述"><a href="#第十一章：Spring-Cloud及Cloud-Native概述" class="headerlink" title="第十一章：Spring Cloud及Cloud Native概述"></a>第十一章：Spring Cloud及Cloud Native概述</h1><h1 id="第十二章：服务注册与发现"><a href="#第十二章：服务注册与发现" class="headerlink" title="第十二章：服务注册与发现"></a>第十二章：服务注册与发现</h1><h1 id="第十三章：服务熔断"><a href="#第十三章：服务熔断" class="headerlink" title="第十三章：服务熔断"></a>第十三章：服务熔断</h1><h1 id="第十四章：服务配置"><a href="#第十四章：服务配置" class="headerlink" title="第十四章：服务配置"></a>第十四章：服务配置</h1><h1 id="第十五章：Spring-Cloud-Stream"><a href="#第十五章：Spring-Cloud-Stream" class="headerlink" title="第十五章：Spring Cloud Stream"></a>第十五章：Spring Cloud Stream</h1><h1 id="第十六章：服务链路追踪"><a href="#第十六章：服务链路追踪" class="headerlink" title="第十六章：服务链路追踪"></a>第十六章：服务链路追踪</h1>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
+    <time datetime="2019-12-24T10:13:48.000Z" itemprop="datePublished">2019-12-24</time>
+  </a>
+</section>
 
 
 
@@ -184,16 +135,6 @@
   
 
 
-  <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
-</div>
-
-  <div class="weiboshow">
-  <p class="asidetitle">Weibo</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=&verifier=b3593ceb&dpc=1"></iframe>
-</div>
-
-
 </aside>
 </div>
     </div>
@@ -206,7 +147,7 @@
 	
 	
 	<section class="info">
-		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+		<p> Hello ,I&#39;m forceChild. <br/>
 			This is my blog,believe it or not.</p>
 	</section>
 	 
